@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | DHF Projects</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #050608;
+    color: #fff;
+    font-family: Inter, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 20% 40%, #003b3040, transparent 35%),
+        radial-gradient(circle at 80% 60%, #102c5540, transparent 35%);
+    filter: blur(70px);
+    animation: glow 10s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes glow {
+    from { transform: translate(-3%, -2%); }
+    to { transform: translate(3%, 2%); }
+}
+
+.logo {
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #70f5cb;
+}
+
+.content {
+    padding: 25px;
+    animation: appear 1s ease both;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error {
+    font-size: clamp(100px, 25vw, 230px);
+    font-weight: 900;
+    letter-spacing: -12px;
+    line-height: 0.9;
+    background: linear-gradient(135deg, #fff, #75f5ce 45%, #668bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h1 {
+    font-size: clamp(20px, 4vw, 35px);
+    letter-spacing: -1px;
+    margin-top: 30px;
+}
+
+p {
+    color: #777d8a;
+    font-size: 14px;
+    margin-top: 14px;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.button {
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.primary {
+    background: #fff;
+    color: #050608;
+}
+
+.secondary {
+    color: #fff;
+    border: 1px solid #252932;
+    background: #ffffff05;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+footer {
+    position: absolute;
+    bottom: 30px;
+    color: #444954;
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+@media (max-width: 500px) {
+    .logo {
+        top: 25px;
+        left: 25px;
+    }
+    .error {
+        letter-spacing: -6px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="logo">DHF<span>.</span></div>
+
+<main class="content">
+    <div class="error">404</div>
+    <h1>PAGE NOT FOUND.</h1>
+    <p>This project doesn't exist, or the page has moved.<br>
+    Let's get you back on track.</p>
+
+    <div class="buttons">
+        <a href="/" class="button primary">BACK HOME ↗</a>
+        <a href="/p" class="button secondary">PROJECT DIRECTORY</a>
+    </div>
+</main>
+
+<footer>DHF INDUSTRIES</footer>
+
+</body>
+</html>
