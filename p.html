@@ -3,20 +3,151 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#050608">
   <title>Projects | DHF</title>
+
   <style>
-    *{box-sizing:border-box}body{margin:0;padding:42px 6vw;font-family:Arial,Helvetica,sans-serif;color:#17191c;background:#fff}.brand{font-size:18px;font-weight:800;letter-spacing:-1px;text-decoration:none;color:inherit}.brand span{color:#168b70}main{max-width:850px;margin:90px auto 0}h1{font-size:clamp(38px,7vw,64px);letter-spacing:-.065em;margin:0 0 35px;font-weight:800}.projects{list-style:none;padding:0;margin:0;border-top:1px solid #e7e9eb}.projects li{border-bottom:1px solid #e7e9eb}.projects a{display:block;padding:19px 2px;color:#202328;text-decoration:none;font-size:16px}.projects a:hover{color:#168b70}footer{max-width:850px;margin:100px auto 0;color:#9ba1a6;font-size:10px;letter-spacing:3px}
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050608;
+      --text: #f5f7fa;
+      --muted: #737b88;
+      --accent: #70f5cb;
+      --border: rgba(255,255,255,.09);
+    }
+
+    body {
+      margin: 0;
+      padding: 42px 6vw;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Ambient gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20%;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 15%,
+          rgba(0,130,100,.18), transparent 40%),
+        radial-gradient(ellipse at 85% 30%,
+          rgba(35,80,180,.18), transparent 40%),
+        radial-gradient(ellipse at 50% 100%,
+          rgba(0,100,90,.10), transparent 45%);
+      filter: blur(60px);
+      animation: ambient 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambient {
+      from { transform: translate(-2%, -1%) scale(1); }
+      to   { transform: translate(2%, 1%) scale(1.05); }
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 850px;
+      margin: 90px auto 0;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 64px);
+      letter-spacing: -.065em;
+      margin: 0 0 35px;
+      font-weight: 800;
+    }
+
+    .projects {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .projects li {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .projects a {
+      display: block;
+      padding: 21px 5px;
+      color: #dce2e9;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color .25s, padding-left .25s;
+    }
+
+    .projects a:hover {
+      color: var(--accent);
+      padding-left: 12px;
+    }
+
+    footer {
+      max-width: 850px;
+      margin: 100px auto 0;
+      color: #414957;
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 28px 7vw;
+      }
+
+      main {
+        margin-top: 75px;
+      }
+
+      footer {
+        margin-top: 80px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <a class="brand" href="/">DHF<span>.</span></a>
+
   <main>
     <h1>Projects</h1>
+
     <ul class="projects" aria-label="Projects">
-      <li><a href="/projects/auraclicker">AuraClicker ↗</a></li>
+      <li>
+        <a href="/projects/auraclicker/">AuraClicker ↗</a>
+      </li>
     </ul>
   </main>
+
   <footer>DHF INDUSTRIES</footer>
+
 </body>
 </html>
